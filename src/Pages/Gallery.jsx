@@ -29,19 +29,20 @@ const GalleryStyled = styled.main`
 
 const Gallery = () => {
   const [disco, setDisco] = useState(true);
+
   const [discography] = useFetch(
     "https://63eced9031ef61473b2c6fb1.mockapi.io/id"
   );
+
   const [singer] = useFetch(
     "https://63eced9031ef61473b2c6fb1.mockapi.io/singers"
   );
-  console.log(discography);
+
   return (
     <GalleryStyled>
       <nav className="gallerybutton">
-        <button onClick={() => setDisco(true)}>DISCOGRAFÍA</button>
-        <button onClick={() => setDisco(false)}>BANDA</button>
-        <input></input>
+        <button onClick={() => setDisco(true)}>DISCOGRAPHY</button>
+        <button onClick={() => setDisco(false)}>CREW</button>
       </nav>
       {disco && <DiscographyMap disco={discography} />}
       {disco === false && <SingerMap singer={singer} />}

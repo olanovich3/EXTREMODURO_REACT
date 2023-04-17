@@ -102,9 +102,13 @@ const Login = () => {
             ref={passwordRef}
           />
           <button
-            onClick={() =>
-              logIn(usernameRef.current.value, passwordRef.current.value)
-            }
+            onClick={() => {
+              const username = usernameRef.current.value;
+              const password = passwordRef.current.value;
+              if (username && password) {
+                logIn(username, password);
+              }
+            }}
           >
             LOGIN
           </button>

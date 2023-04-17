@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const DiscographyMapStyled = styled.div`
@@ -35,6 +36,9 @@ const DiscographyMap = ({ disco }) => {
           <article className="discocard" key={item.name}>
             <img src={item.img} alt={item.name} />
             <h2>{item.name}</h2>
+            <Link to={`/gallery/${item.id}`}>
+              <button>More details</button>
+            </Link>
           </article>
         );
       })}
